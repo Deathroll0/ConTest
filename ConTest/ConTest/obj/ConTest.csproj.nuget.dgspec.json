@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Ricardo\\source\\repos\\ConTest\\ConTest\\ConTest.csproj": {}
+    "C:\\Users\\Ricardo\\Documents\\GitHub\\ConTest\\ConTest\\ConTest\\ConTest.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Ricardo\\source\\repos\\ConTest\\ConTest\\ConTest.csproj": {
+    "C:\\Users\\Ricardo\\Documents\\GitHub\\ConTest\\ConTest\\ConTest\\ConTest.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Ricardo\\source\\repos\\ConTest\\ConTest\\ConTest.csproj",
+        "projectUniqueName": "C:\\Users\\Ricardo\\Documents\\GitHub\\ConTest\\ConTest\\ConTest\\ConTest.csproj",
         "projectName": "ConTest",
-        "projectPath": "C:\\Users\\Ricardo\\source\\repos\\ConTest\\ConTest\\ConTest.csproj",
+        "projectPath": "C:\\Users\\Ricardo\\Documents\\GitHub\\ConTest\\ConTest\\ConTest\\ConTest.csproj",
         "packagesPath": "C:\\Users\\Ricardo\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Ricardo\\source\\repos\\ConTest\\ConTest\\obj\\",
+        "outputPath": "C:\\Users\\Ricardo\\Documents\\GitHub\\ConTest\\ConTest\\ConTest\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Ricardo\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -43,6 +43,10 @@
             "Microsoft.AspNet.WebApi.Core": {
               "target": "Package",
               "version": "[5.2.9, )"
+            },
+            "Microsoft.AspNetCore.Authentication": {
+              "target": "Package",
+              "version": "[2.2.0, )"
             },
             "Swashbuckle.AspNetCore": {
               "target": "Package",
