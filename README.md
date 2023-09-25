@@ -13,16 +13,16 @@ Dado un Json con lista de facturas, este deberás utilizarlo como base de datos 
 - Debe compilar correctamente.
 
 - Requerimientos:
-  -Retornar lista completa de las facturas y calcular el total de cada para cada una de ellas.
-  -Debe retornar las facturas de un comprador según su rut.
-  -Debe retornar el comprador que tenga mas compras.
-  -Retornar lista de compradores con el monto total de compras realizadas. 
-  -Retornar lista de facturas agrupadas por comuna, y permitir buscar facturas de una comuna específica.
+  - Retornar lista completa de las facturas y calcular el total de cada para cada una de ellas.
+  - Debe retornar las facturas de un comprador según su rut.
+  - Debe retornar el comprador que tenga mas compras.
+  - Retornar lista de compradores con el monto total de compras realizadas. 
+  - Retornar lista de facturas agrupadas por comuna, y permitir buscar facturas de una comuna específica.
 
-[!NOTE]
-URL Swagger
+> [!NOTE]
+> URL Swagger
 
 https://localhost:7160/swagger/index.html
 
-[!NOTE]
-Coleccion Postman tambien en repositorio.
+> [!NOTE]
+> Coleccion Postman tambien en repositorio.
