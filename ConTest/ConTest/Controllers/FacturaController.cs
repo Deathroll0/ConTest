@@ -1,4 +1,5 @@
 ﻿using ConTest.DTO;
+using ConTest.Interfaces;
 using ConTest.Model;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
@@ -12,6 +13,16 @@ namespace ConTest.Controllers
     [Route("[controller]")]
     public class FacturaController : ControllerBase
     {
+
+        private readonly IWebHostEnvironment _env;
+        private readonly IFactura _facturaService;
+
+        public FacturaController(IWebHostEnvironment env, IFactura facturaService)
+        {
+            _env = env;
+            _facturaService = facturaService;
+        }
+
         // GET: FacturaController
         /// <summary>
         /// Obtiene todos los elementos.
@@ -21,8 +32,8 @@ namespace ConTest.Controllers
         {
             try
             {
-                List<Factura> facturas = ObtenerDatos();
-                facturas = calcularTotalFactura(facturas);
+                List<Factura> facturas = _facturaService.ObtenerDatos(_env);
+                facturas = _facturaService.calcularTotalFactura(facturas);
 
                 string jsonFormateado = JsonSerializer.Serialize(facturas);
 
@@ -41,7 +52,7 @@ namespace ConTest.Controllers
         {
             try
             {
-                List<Factura> facturas = ObtenerDatos();
+                List<Factura> facturas = _facturaService.ObtenerDatos(_env);
 
                 List<Factura> facturasEncontradas = facturas.Where(factura => factura.RUTComprador == rut).ToList();
 
@@ -64,7 +75,7 @@ namespace ConTest.Controllers
         {
             try
             {
-                List<Factura> facturas = ObtenerDatos();
+                List<Factura> facturas = _facturaService.ObtenerDatos(_env);
 
                 List<CompradorDTO> ordenCompradoresMasCompras = facturas
                     .GroupBy(factura => new { Rut = factura.RUTComprador, Dv = factura.DvComprador })
@@ -90,8 +101,8 @@ namespace ConTest.Controllers
         {
             try
             {
-                List<Factura> facturas = ObtenerDatos();
-                facturas = calcularTotalFactura(facturas);
+                List<Factura> facturas = _facturaService.ObtenerDatos(_env);
+                facturas = _facturaService.calcularTotalFactura(facturas);
                 List<CompradorTotalCompras> compradoresConMontoTotal = facturas
                 .GroupBy(factura => new { Rut = factura.RUTComprador, Dv = factura.DvComprador })
                 .Select(grupo => new CompradorTotalCompras
@@ -115,7 +126,7 @@ namespace ConTest.Controllers
         {
             try
             {
-                List<Factura> facturas = ObtenerDatos();
+                List<Factura> facturas = _facturaService.ObtenerDatos(_env);
                 if (id.HasValue) 
                 {
                     var facturasPorComuna = facturas.Where(factura => factura.ComunaComprador == id).ToList();
@@ -139,33 +150,6 @@ namespace ConTest.Controllers
 
                 return StatusCode(StatusCodes.Status500InternalServerError, e.Message);
             }
-        }
-
-        private readonly IWebHostEnvironment _env;
-
-        public FacturaController(IWebHostEnvironment env)
-        {
-            _env = env;
-        }
-
-        private List<Factura> ObtenerDatos()
-        {
-            string rootPath = _env.ContentRootPath;
-
-            string rutaJson = Path.Combine(rootPath, "JsonBD", "JsonEjemplo.json");
-            string lecturaJson = System.IO.File.ReadAllText(rutaJson);
-            List<Factura> facturas = JsonSerializer.Deserialize<List<Factura>>(lecturaJson);
-            return facturas;
-        }
-
-        private List<Factura> calcularTotalFactura(List<Factura> facturas)
-        {
-            foreach (var factura in facturas)
-            {
-                double suma = factura.DetalleFactura.Sum(detalle => detalle.TotalProducto);
-                factura.TotalFactura = suma;
-            }
-            return facturas;
         }
     }
 

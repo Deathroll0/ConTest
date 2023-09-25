@@ -73,3 +73,5 @@ C:\Users\Ricardo\Documents\GitHub\ConTest\ConTest\ConTest\obj\Debug\net6.0\refin
 C:\Users\Ricardo\Documents\GitHub\ConTest\ConTest\ConTest\obj\Debug\net6.0\ConTest.pdb
 C:\Users\Ricardo\Documents\GitHub\ConTest\ConTest\ConTest\obj\Debug\net6.0\ConTest.genruntimeconfig.cache
 C:\Users\Ricardo\Documents\GitHub\ConTest\ConTest\ConTest\obj\Debug\net6.0\ref\ConTest.dll
+C:\Users\Ricardo\Documents\GitHub\ConTest\ConTest\ConTest\bin\Debug\net6.0\Castle.Core.dll
+C:\Users\Ricardo\Documents\GitHub\ConTest\ConTest\ConTest\bin\Debug\net6.0\Moq.dll
