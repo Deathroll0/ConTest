@@ -1,0 +1,85 @@
+{
+	"info": {
+		"_postman_id": "2f4bfc93-76d7-4093-8c25-47d7f13c9179",
+		"name": "ConTest",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "7838716"
+	},
+	"item": [
+		{
+			"name": "ObtenerListadoFacturas",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "XApiKey",
+						"value": "4d32e83d0442b8e8eb2fdd56d45f5806",
+						"type": "text"
+					}
+				],
+				"url": "https://localhost:7160/Factura/ObtenerListadoFacturas"
+			},
+			"response": []
+		},
+		{
+			"name": "BusquedaPorRut",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "XApiKey",
+						"value": "4d32e83d0442b8e8eb2fdd56d45f5806",
+						"type": "text"
+					}
+				],
+				"url": "https://localhost:7160/Factura/BusquedaPorRut/6584588"
+			},
+			"response": []
+		},
+		{
+			"name": "CompradorMasCompras",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "XApiKey",
+						"value": "4d32e83d0442b8e8eb2fdd56d45f5806",
+						"type": "text"
+					}
+				],
+				"url": "https://localhost:7160/Factura/CompradorMasCompras"
+			},
+			"response": []
+		},
+		{
+			"name": "ListaCompradoresMontoTotal",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "XApiKey",
+						"value": "4d32e83d0442b8e8eb2fdd56d45f5806",
+						"type": "text"
+					}
+				],
+				"url": "https://localhost:7160/Factura/ListaCompradoresMontoTotal"
+			},
+			"response": []
+		},
+		{
+			"name": "BusquedaPorComuna",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "XApiKey",
+						"value": "4d32e83d0442b8e8eb2fdd56d45f5806",
+						"type": "text"
+					}
+				],
+				"url": "https://localhost:7160/Factura/BusquedaPorComuna/45"
+			},
+			"response": []
+		}
+	]
+}
